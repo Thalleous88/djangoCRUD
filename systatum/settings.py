@@ -26,6 +26,7 @@ SECRET_KEY = os.getenv(
     "secret-key"
 )
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -42,8 +43,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'drf_spectacular',
     'api',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Systatum Challenge API',
+    'DESCRIPTION': 'API documentation for Systatum Challenge',
+    'VERSION': '1.0.0',
+}
 
 
 MIDDLEWARE = [
