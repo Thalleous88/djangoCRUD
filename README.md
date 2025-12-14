@@ -16,6 +16,10 @@ The application is implemented using **Django** and **Django REST Framework (DRF
 * **PostgreSQL** 
 * **drf-spectacular** (OpenAPI / Swagger / ReDoc documentation)
 
+We use Django because of my familiarity with Python, its rich set of built-in features, and its suitability for the challenge requirements. Django REST Framework (DRF) is chosen as it provides robust abstractions for common CRUD patterns and handles much of the repetitive logic such as HTTP method routing, serialization (JSON → Python objects → database), validation, standardized API responses, pagination, and more. DRF also integrates well with API documentation tools like drf-spectacular, enabling automatic OpenAPI/Swagger documentation.
+
+Finally, PostgreSQL is used as the database because it is fast, reliable, and works seamlessly with Django. It supports high concurrency through Multi-Version Concurrency Control (MVCC), allowing multiple users to read and write data simultaneously without compromising data integrity.
+
 ---
 
 ## Core Requirements Addressed
@@ -55,13 +59,7 @@ Example response:
 
 ### Why JSON Fields?
 
-Products are designed to support **arbitrary attributes** (e.g. name, price, stock, category). Instead of enforcing a rigid relational schema, product attributes are stored in a JSON field.
-
-This approach:
-
-* Allows product attributes to evolve without database migrations
-* Keeps the model flexible for different retailers
-* Matches the challenge requirement for arbitrary fields
+Products are designed to support **arbitrary attributes** (e.g. name, price, stock, category). Instead of enforcing a rigid relational schema, product attributes are stored in a JSON field as instructed in the requirement.
 
 ---
 

@@ -28,6 +28,7 @@ class ProductDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     
+    # override update method to merge fields
     def update(self, request, *args, **kwargs):
         instance = self.get_object()
         
